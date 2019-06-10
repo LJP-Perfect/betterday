@@ -2,7 +2,7 @@ BetterDay
 ===========================
 ### 项目介绍
 ---
-此为后台项目地址，前端项目地址：https://github.com/LJP-Perfect/betterday-web。
+此为后台项目地址，前端项目地址：https://github.com/LJP-Perfect/betterday-web
 
 BetterDay项目是以H5形式展示的一款实用性记录管理应用，目前BetterDay包含三大功能：习惯打卡、日程安排、团队管理。
 
