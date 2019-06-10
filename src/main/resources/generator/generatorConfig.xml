@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="me.freelee.betterday.util.IBaseMapper" />
+        </plugin>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!--去除自动生成的注释-->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库连接信息-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="" userId="" password=""/>
+        <!--自动生成模型的位置-->
+        <javaModelGenerator targetPackage="me.freelee.betterday.model" targetProject="src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成mapper映射文件的位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+        <!--生成DAO的位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="me.freelee.betterday.dao" targetProject="src/main/java"/>
+        <!--表名和生成实体类名，关闭生成Example相关DAO和mapper-->
+        <!--<table tableName="pms_product" domainObjectName="PmsProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false">-->
+        <!--<table tableName="pms_product" domainObjectName="PmsProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false">-->
+        <!--<columnOverride column="description" jdbcType="VARCHAR" />-->
+        <!--<columnOverride column="after_sale_instruction" jdbcType="VARCHAR" />-->
+        <!--<columnOverride column="compact_design" jdbcType="VARCHAR" />-->
+        <!--<columnOverride column="detail_desc" jdbcType="VARCHAR" />-->
+        <!--</table>-->
+        <!--<table tableName="admin" domainObjectName="Admin" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+        <!--<table tableName="event" domainObjectName="Event" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+        <!--<table tableName="feedback" domainObjectName="Feedback" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+        <!--<table tableName="habit" domainObjectName="Habit" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+        <!--<table tableName="log" domainObjectName="Log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+        <!--<table tableName="notice" domainObjectName="Notice" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+        <!--<table tableName="team" domainObjectName="Team" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+        <!--<table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+        <!--<table tableName="user_habit_check_log" domainObjectName="UserHabitCheckLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+        <!--<table tableName="user_habit_record" domainObjectName="UserHabitRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+        <!--<table tableName="time" domainObjectName="Time" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"></table>-->
+
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,40 @@
+spring:
+  #数据库配置
+  datasource:
+    url: #你的数据库url
+    driver-class-name: com.mysql.jdbc.Driver
+    username: #你的数据库username
+    password: #你的数据库password
+  application:
+    name: betterday
+  devtools:
+    restart:
+      enabled: true
+#  #rabbitmq队列
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: admin
+#    password: 123456
+  #quartz定时任务配置
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always
+      schema: classpath:schema/tables_mysql.sql
+
+#mybatis配置
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: me.freelee.betterday.model
+
+
+#分页器配置
+pagehelper:
+  reasonable: true
+  support-methods-arguments: true
+  params: countSql
+  pagesize: 8
+server:
+  port: 9090

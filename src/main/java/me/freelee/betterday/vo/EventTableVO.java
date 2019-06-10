@@ -1,0 +1,19 @@
+package me.freelee.betterday.vo;
+
+import lombok.Getter;
+import lombok.Setter;
+import me.freelee.betterday.model.Event;
+
+/**
+ * Description:
+ * Date:2019/6/7
+ *
+ * @author:Lee
+ */
+@Setter
+@Getter
+public class EventTableVO extends Event {
+
+    boolean isBeginToday=false;
+    boolean isEndToday=false;
+}

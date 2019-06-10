@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.freelee.betterday.dao.UserHabitRecordMapper" >
+  <resultMap id="BaseResultMap" type="me.freelee.betterday.model.UserHabitRecord" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="habit_id" property="habitId" jdbcType="INTEGER" />
+    <result column="checked_days" property="checkedDays" jdbcType="INTEGER" />
+    <result column="unchecked_days" property="uncheckedDays" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, user_id, habit_id, checked_days, unchecked_days
+  </sql>
+
+  <update id="subCheckedDays" parameterType="java.util.Map">
+    UPDATE user_habit_record
+    SET checked_days=checked_days-1
+    WHERE habit_id=#{habitId,jdbcType=INTEGER} AND user_id=#{userId,jdbcType=INTEGER}
+  </update>
+
+  <update id="addCheckedDays" parameterType="java.util.Map">
+    UPDATE user_habit_record
+    SET checked_days=checked_days+1
+    WHERE habit_id=#{habitId,jdbcType=INTEGER} AND user_id=#{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

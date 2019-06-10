@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.freelee.betterday.dao.HabitMapper" >
+  <resultMap id="BaseResultMap" type="me.freelee.betterday.model.Habit" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="time_id" property="timeId" jdbcType="INTEGER" />
+    <result column="weekdays" property="weekdays" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="is_public" property="isPublic" jdbcType="INTEGER" />
+    <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, name, icon, time_id, weekdays, desc, is_public, is_delete, create_time, modify_time
+  </sql>
+  <insert id="insertHabit" useGeneratedKeys="true" parameterType="me.freelee.betterday.model.Habit" keyProperty="id">
+    INSERT INTO habit(name,icon,time_id,weekdays,description,is_public,is_delete,create_time,modify_time)
+    VALUES (#{name},#{icon},#{timeId},#{weekdays},#{description},#{isPublic},#{isDelete},#{createTime},#{modifyTime})
+  </insert>
+
+</mapper>

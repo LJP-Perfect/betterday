@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.freelee.betterday.dao.TimeMapper" >
+  <resultMap id="BaseResultMap" type="me.freelee.betterday.model.Time" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="is_public" property="isPublic" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, name, user_id, create_time, icon, sort, is_public
+  </sql>
+
+  <select id="selectTimes" resultMap="BaseResultMap" parameterType="java.lang.Integer" resultType="java.util.List">
+    SELECT * FROM time
+    WHERE is_public=1 OR #{userId}=(
+      SELECT user_id FROM time t
+      WHERE t.is_public=0
+    )
+  </select>
+</mapper>

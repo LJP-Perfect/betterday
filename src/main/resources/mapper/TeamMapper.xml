@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.freelee.betterday.dao.TeamMapper" >
+  <resultMap id="BaseResultMap" type="me.freelee.betterday.model.Team" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="team_sn" property="teamSn" jdbcType="VARCHAR" />
+    <result column="capital_id" property="capitalId" jdbcType="INTEGER" />
+    <result column="teammate_ids" property="teammateIds" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, name, team_sn, capital_id, teammate_ids, password, create_time
+  </sql>
+</mapper>

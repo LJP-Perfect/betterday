@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.freelee.betterday.dao.UserHabitCheckLogMapper" >
+  <resultMap id="BaseResultMap" type="me.freelee.betterday.model.UserHabitCheckLog" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="habit_id" property="habitId" jdbcType="INTEGER" />
+    <result column="time" property="time" jdbcType="DATE" />
+    <result column="checked" property="checked" jdbcType="INTEGER" />
+    <result column="check_time" property="checkTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, user_id, habit_id, time, check, check_time
+  </sql>
+  <update id="updateHabitCheckedStatus" parameterType="java.util.Map">
+    UPDATE user_habit_check_log
+    SET checked=#{status,jdbcType=TINYINT},check_time=#{checkTime,jdbcType=TIMESTAMP}
+    WHERE habit_id=#{habitId,jdbcType=INTEGER} AND user_id=#{userId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectHabitIdsByUserId" resultType="java.lang.Integer" parameterType="java.util.Map">
+    SELECT habit_id
+    FROM user_habit_check_log
+    WHERE user_id=#{userId,jdbcType=INTEGER} AND time=#{time,jdbcType=DATE}
+  </select>
+</mapper>
